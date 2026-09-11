@@ -1,22 +1,22 @@
-# CrediSense — Intelligent Loan Approval Prediction
+# Credit Risk & Loan Approval Prediction
 
-> A supervised machine learning system for predicting loan approval using applicant financial, demographic, employment, and credit-related information.
+> A supervised machine learning project for predicting whether a loan application is approved or rejected using applicant financial, demographic, employment, and credit-related features.
 
 ## 🚀 Project Overview
 
-**CrediSense** is a supervised machine learning project that predicts whether a loan application is likely to be **Approved or Rejected**.
+This project builds an end-to-end **binary classification** workflow to predict loan approval outcomes from historical application data.
 
-The project follows an end-to-end machine learning workflow:
+The workflow covers:
 
 **Data Understanding → EDA → Preprocessing → Encoding → Correlation Analysis → Feature Engineering → Model Training → Evaluation**
 
-The objective is to compare multiple classification algorithms and identify the model with the strongest overall performance.
+The main objective is to compare multiple classification algorithms and identify the model with the strongest overall performance.
 
 ## 🎯 Problem Statement
 
-Loan applications can involve reviewing income, employment, credit history, loan details, and other applicant information. This project explores how supervised machine learning can learn patterns from historical loan applications and produce a consistent approval prediction.
+Loan approval can depend on factors such as income, employment, credit score, debt-to-income ratio, loan details, and applicant characteristics. This project explores how supervised machine learning can learn patterns from historical applications and generate a consistent approval prediction.
 
-### Target
+### Target Variable
 
 - `1` → Loan Approved
 - `0` → Loan Rejected
@@ -52,7 +52,7 @@ The dataset contains **1,000 loan applications** with **20 original columns**. E
 
 ## 🔍 Exploratory Data Analysis
 
-The project includes analysis of class distribution, income distributions, credit score, DTI ratio, savings, and feature relationships with loan approval.
+The analysis examines class distribution, income, credit score, DTI ratio, savings, and relationships between numerical features and loan approval.
 
 ### Loan Approval Distribution
 
@@ -63,13 +63,13 @@ The project includes analysis of class distribution, income distributions, credi
 
 | Feature | Correlation with Loan Approval |
 |---|---:|
-| Credit Score | +0.451 |
-| DTI Ratio | -0.445 |
-| Applicant Income | +0.120 |
-| Loan Amount | -0.126 |
-| Loan Term | -0.087 |
+| `Credit_Score` | +0.451 |
+| `DTI_Ratio` | -0.445 |
+| `Applicant_Income` | +0.120 |
+| `Loan_Amount` | -0.126 |
+| `Loan_Term` | -0.087 |
 
-Credit Score had the strongest positive numerical association with the target, while DTI Ratio had the strongest negative association.
+`Credit_Score` had the strongest positive numerical association with loan approval, while `DTI_Ratio` had the strongest negative association among the evaluated numerical features.
 
 ## 🧹 Data Preprocessing
 
@@ -85,11 +85,11 @@ Credit Score had the strongest positive numerical association with the target, w
 ### Categorical Encoding
 
 - Label Encoding for `Education_Level` and the target variable
-- One-Hot Encoding for nominal categorical variables such as employment status, marital status, loan purpose, property area, gender, and employer category
+- One-Hot Encoding for nominal categorical variables including employment status, marital status, loan purpose, property area, gender, and employer category
 
 ### Feature Scaling
 
-`StandardScaler` was used before model training.
+`StandardScaler` was applied before model training.
 
 ### Train-Test Split
 
@@ -98,7 +98,7 @@ The data was split into:
 - **80% training data**
 - **20% testing data**
 
-with `random_state=42`.
+using `random_state=42`.
 
 ## ⚙️ Feature Engineering
 
@@ -115,7 +115,7 @@ For the feature-engineered model comparison, the original `Credit_Score` and `DT
 
 ### Logistic Regression
 
-A linear classification model used as the primary baseline and final model candidate.
+Used as a primary linear classification model and final model candidate.
 
 ### K-Nearest Neighbors
 
@@ -127,11 +127,11 @@ n_neighbors = 5
 
 ### Gaussian Naive Bayes
 
-A probabilistic classification model used for comparison.
+Used as a probabilistic classification model for comparison.
 
-# 📈 Model Performance
+## 📈 Model Performance
 
-## Before Feature Engineering
+### Before Feature Engineering
 
 | Model | Accuracy | Precision | Recall | F1 Score |
 |---|---:|---:|---:|---:|
@@ -139,7 +139,7 @@ A probabilistic classification model used for comparison.
 | KNN | 76.00% | 62.75% | 52.46% | 57.14% |
 | Gaussian Naive Bayes | **86.50%** | **80.36%** | 73.77% | 76.92% |
 
-## After Feature Engineering
+### After Feature Engineering
 
 | Model | Accuracy | Precision | Recall | F1 Score |
 |---|---:|---:|---:|---:|
@@ -151,7 +151,7 @@ A probabilistic classification model used for comparison.
 
 ### Feature-Engineered Logistic Regression
 
-The feature-engineered **Logistic Regression** model achieved the strongest overall performance across the evaluated metrics.
+The feature-engineered **Logistic Regression** model achieved the strongest overall balance across the evaluated metrics.
 
 | Metric | Score |
 |---|---:|
@@ -160,7 +160,7 @@ The feature-engineered **Logistic Regression** model achieved the strongest over
 | Recall | **83.61%** |
 | F1 Score | **80.95%** |
 
-Gaussian Naive Bayes achieved the highest precision at **81.13%**, but Logistic Regression provided the strongest overall balance of accuracy, recall, and F1 score.
+Gaussian Naive Bayes achieved the highest precision at **81.13%**, while Logistic Regression delivered the strongest overall balance of accuracy, recall, and F1 score.
 
 ## 📌 Feature Engineering Impact
 
@@ -172,14 +172,15 @@ Recall:   77.05% → 83.61%
 F1 Score: 77.69% → 80.95%
 ```
 
-The engineered squared features improved the overall performance of Logistic Regression.
+The engineered squared features improved the overall Logistic Regression results.
 
 ## 🧠 Key Insights
 
-- Credit Score had the strongest positive numerical relationship with loan approval.
-- DTI Ratio had the strongest negative numerical relationship with loan approval among the evaluated numerical features.
+- `Credit_Score` showed the strongest positive numerical relationship with loan approval.
+- `DTI_Ratio` showed the strongest negative numerical relationship with loan approval among the evaluated numerical features.
 - Feature engineering improved Logistic Regression performance.
-- Logistic Regression delivered the best overall results among the three tested models.
+- Logistic Regression achieved the best overall results among the three tested models.
+- Gaussian Naive Bayes achieved the highest precision after feature engineering.
 
 ## 🛠️ Tech Stack
 
@@ -208,20 +209,20 @@ creditwise-credit-risk-loan-approval/
 
 ## ▶️ Run the Project
 
-### Clone
+### Clone the Repository
 
 ```bash
 git clone https://github.com/chandusriii/creditwise-credit-risk-loan-approval.git
 cd creditwise-credit-risk-loan-approval
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Launch Jupyter
+### Launch Jupyter Notebook
 
 ```bash
 jupyter notebook
@@ -257,7 +258,7 @@ This project is for educational and machine learning demonstration purposes. Rea
 
 ## ⭐ Project
 
-**CrediSense — Intelligent Loan Approval Prediction**
+**Credit Risk & Loan Approval Prediction**
 
 Built with Python and Scikit-learn to demonstrate supervised classification, data preprocessing, feature engineering, model comparison, and evaluation.
 
