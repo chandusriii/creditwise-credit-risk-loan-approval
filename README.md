@@ -217,9 +217,6 @@ creditwise-credit-risk-loan-approval/
 │   ├── model_explanation.md
 │   └── results.md
 │
-├── outputs/
-│   └── README.md              # Analysis visualizations will go here
-│
 ├── README.md
 └── requirements.txt
 ```
