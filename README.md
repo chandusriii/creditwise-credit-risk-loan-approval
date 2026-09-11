@@ -241,17 +241,6 @@ scikit-learn
 jupyter
 ```
 
-## 🔮 Future Improvements
-
-- Hyperparameter tuning
-- Cross-validation
-- Class-imbalance handling
-- ROC-AUC and Precision-Recall analysis
-- Probability-based risk scoring
-- Explainable AI techniques
-- API deployment
-- Interactive prediction dashboard
-
 ## ⚠️ Disclaimer
 
 This project is for educational and machine learning demonstration purposes. Real-world lending decisions require appropriate financial, regulatory, fairness, privacy, security, and human-review processes.
