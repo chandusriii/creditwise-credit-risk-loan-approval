@@ -21,6 +21,8 @@ Loan approval can depend on factors such as income, employment, credit score, de
 - `1` → Loan Approved
 - `0` → Loan Rejected
 
+📄 **Detailed documentation:** [Problem Statement](docs/problem_statement.md)
+
 ## 📊 Dataset
 
 The dataset contains **1,000 loan applications** with **20 original columns**. Each row represents a loan applicant with personal, financial, employment, and credit-related information.
@@ -76,7 +78,7 @@ The analysis examines class distribution, income, credit score, DTI ratio, savin
 ### Missing Values
 
 - Numerical features → **Mean imputation**
-- Categorical features → **Most-frequent imputation**
+- Categorical features → **Most-frequent-value imputation**
 
 ### Identifier Removal
 
@@ -99,6 +101,8 @@ The data was split into:
 - **20% testing data**
 
 using `random_state=42`.
+
+📄 **Detailed documentation:** [Data Preprocessing & Feature Engineering](docs/data_preprocessing.md)
 
 ## ⚙️ Feature Engineering
 
@@ -129,6 +133,8 @@ n_neighbors = 5
 
 Used as a probabilistic classification model for comparison.
 
+📄 **Detailed model explanations:** [Model Explanations](docs/model_explanation.md)
+
 ## 📈 Model Performance
 
 ### Before Feature Engineering
@@ -146,6 +152,8 @@ Used as a probabilistic classification model for comparison.
 | Logistic Regression | **88.00%** | 78.46% | **83.61%** | **80.95%** |
 | KNN | 78.50% | 67.31% | 57.38% | 61.95% |
 | Gaussian Naive Bayes | 86.00% | **81.13%** | 70.49% | 75.44% |
+
+📄 **Detailed results and confusion matrix:** [Results & Model Evaluation](docs/results.md)
 
 ## 🏆 Final Model
 
@@ -202,6 +210,15 @@ creditwise-credit-risk-loan-approval/
 │
 ├── notebooks/
 │   └── credit_wise.ipynb
+│
+├── docs/
+│   ├── problem_statement.md
+│   ├── data_preprocessing.md
+│   ├── model_explanation.md
+│   └── results.md
+│
+├── outputs/
+│   └── README.md              # Analysis visualizations will go here
 │
 ├── README.md
 └── requirements.txt
