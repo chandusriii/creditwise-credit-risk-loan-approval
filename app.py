@@ -556,7 +556,7 @@ if page == "Model Insights":
     with left:
         st.markdown('<div class="card"><div class="card-label">Model</div><div class="card-title">Feature-engineered Logistic Regression</div><div class="card-copy">The classifier receives imputed, scaled numeric features, ordinal-encoded education and one-hot encoded categorical variables. Credit Score and DTI Ratio are transformed into squared features to capture nonlinear effects used in the project.</div></div>', unsafe_allow_html=True)
     with right:
-        st.markdown('<div class="card"><div class="card-label">Evaluation</div><div class="card-title">Benchmark ≠ live probability</div><div class="card-copy">The 88.00% accuracy, 83.61% recall and 80.95% F1 score are the project's held-out evaluation results. A prediction such as 72.40% is an estimated approval probability for one applicant, not an accuracy percentage.</div></div>', unsafe_allow_html=True)
+        st.markdown('<div class="card"><div class="card-label">Evaluation</div><div class="card-title">Benchmark ≠ live probability</div><div class="card-copy">The 88.00% accuracy, 83.61% recall and 80.95% F1 score are the project held-out evaluation results. A prediction such as 72.40% is an estimated approval probability for one applicant, not an accuracy percentage.</div></div>', unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.subheader("Pipeline")
